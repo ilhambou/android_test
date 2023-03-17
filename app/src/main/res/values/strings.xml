@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Applicationn</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">prenom</string>
+    <string name="classe">classe</string>
+    <string name="remarque">remarque</string>
+</resources>

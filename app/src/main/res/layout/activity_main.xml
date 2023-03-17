@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enregistrer"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@id/ImageProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ></ImageView>
+
+    <TextView
+        android:id="@id/txtNom"
+        android:layout_height="wrap_content"
+        android:text="@string/nom"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp">
+
+    </TextView>
+
+    <EditText
+        android:id="@id/labelNom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtNom"
+        app:layout_constraintEnd_toStartOf="@id/ImageProfile"></EditText>
+
+    <TextView
+        android:id="@id/txtPrenom"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/prenom"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtNom"
+        >
+
+    </TextView>
+
+    <EditText
+        android:id="@id/labelPrenom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtNom"
+        app:layout_constraintStart_toEndOf="@id/txtPrenom"
+        app:layout_constraintEnd_toStartOf="@id/ImageProfile"></EditText>
+
+    <TextView
+        android:id="@id/txtClasse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/classe"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtPrenom"
+       >
+
+    </TextView>
+
+    <EditText
+        android:id="@id/labelClasse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtPrenom"
+        app:layout_constraintStart_toEndOf="@id/txtClasse"
+        app:layout_constraintEnd_toStartOf="@id/ImageProfile"></EditText>
+
+    <TextView
+        android:id="@id/txtRemarque"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/remarque"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtClasse"
+       >
+
+    </TextView>
+
+    <EditText
+        android:id="@id/labelRemarque"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/txtRemarque"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+       ></EditText>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
