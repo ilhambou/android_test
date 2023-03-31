@@ -10,4 +10,5 @@
     <item name="labelClasse" type="id" />
     <item name="txtRemarque" type="id" />
     <item name="labelRemarque" type="id" />
+    <item name="ImageProfil" type="id" />
 </resources>
