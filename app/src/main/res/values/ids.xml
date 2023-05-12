@@ -11,4 +11,6 @@
     <item name="txtRemarque" type="id" />
     <item name="labelRemarque" type="id" />
     <item name="ImageProfil" type="id" />
+    <item name="txt_note" type="id" />
+    <item name="txt_cof" type="id" />
 </resources>

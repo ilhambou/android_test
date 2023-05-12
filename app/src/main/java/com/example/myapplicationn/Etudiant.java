@@ -2,10 +2,31 @@ package com.example.myapplicationn;
 
 import android.graphics.Bitmap;
 
+import java.util.List;
+
 public class Etudiant {
     private int id;
     private String nom, prenom,classe,phone;
     private Bitmap photo;
+    private List<Note> notes;
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+    }
+
+    public Etudiant(int id, String nom, String prenom, String classe, String phone, Bitmap photo, List<Note> notes) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.classe = classe;
+        this.phone = phone;
+        this.photo = photo;
+        this.notes = notes;
+    }
 
     public int getId() {
         return id;
