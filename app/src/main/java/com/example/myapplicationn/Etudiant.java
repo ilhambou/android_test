@@ -2,6 +2,7 @@ package com.example.myapplicationn;
 
 import android.graphics.Bitmap;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Etudiant {
@@ -83,5 +84,15 @@ public class Etudiant {
         this.prenom = prenom ;
         this.phone = phone;
         this.photo = photo ;
+    }
+
+    public void addNote(Note n )
+    {
+        if(this.notes == null)
+        {
+            this.notes = new ArrayList<Note>();
+
+        }
+        this.notes.add(n);
     }
 }

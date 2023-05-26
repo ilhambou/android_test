@@ -1,27 +1,27 @@
 package com.example.myapplicationn;
 
 public class Note {
-    private float note ;
-    private int coef ;
+    private String label ;
+    private double score;
 
-    public Note(float note, int coef) {
-        this.note = note;
-        this.coef = coef;
+    public Note(String label, double score) {
+        this.label = label;
+        this.score = score;
     }
 
-    public float getNote() {
-        return note;
+    public String getLabel() {
+        return label;
     }
 
-    public void setNote(float note) {
-        this.note = note;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
-    public int getCoef() {
-        return coef;
+    public double getScore() {
+        return score;
     }
 
-    public void setCoef(int coef) {
-        this.coef = coef;
+    public void setScore(double score) {
+        this.score = score;
     }
 }

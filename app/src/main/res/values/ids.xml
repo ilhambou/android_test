@@ -13,4 +13,7 @@
     <item name="ImageProfil" type="id" />
     <item name="txt_note" type="id" />
     <item name="txt_cof" type="id" />
+    <item name="iconlike" type="id" />
+    <item name="iconLike" type="id" />
+    <item name="labelNote" type="id" />
 </resources>

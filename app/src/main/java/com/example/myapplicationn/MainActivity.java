@@ -28,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAGNAME = MainActivity.class.getSimpleName();
     //private static final String HTTP_URL = "https://belatar.name/rest/profile.php?login=test&passwd=test&id=9998";
 
-    private static final String HTTP_URL = "https://belatar.name/rest/profile.php?login=test&passwd=test&id=9998&&notes=true";
+    private static final String HTTP_URL = "https://belatar.name/rest/profile.php?login=test&passwd=test&id=9998";
 
     private static final String HTTP_Images = "https://belatar.name/images/";
     private Etudiant etd;
     private ListView listview;
+
+    private ListView ListNote=null ;
 
 
     @Override
@@ -77,6 +79,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(TAGNAME, "on est dans onResume");
+
+        ListNote = findViewById(R.id.labelNote);
+        String noteparametre;
+        if(ListNote == null)
+        {
+            noteparametre="";
+
+        }
+        else {
+            noteparametre = "&notes=true";
+        }
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, HTTP_URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -84,14 +97,22 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     etd = new Etudiant(response.getInt("id"),response.getString("nom"),response.getString("prenom"),
                             response.getString("classe"),response.getString("phone"),null);
-                            JSONArray notesArray = response.getJSONArray("note");
+                            /*JSONArray notesArray = response.getJSONArray("note");
                             List<Note> notes = new ArrayList<>();
                             for (int i = 0; i < notesArray.length(); i++) {
                                 JSONObject noteObject = notesArray.getJSONObject(i);
                                 double node = noteObject.getDouble("note");
                                 notes.add(new Note(12,2));
                             }
-                            etd.setNotes(notes);
+                            etd.setNotes(notes);*/
+                    if(response.has("notes"))
+                    {
+                        JSONArray ja = response.getJSONArray("notes");
+                        for(int i=0;i<ja.length();i++)
+                        {
+                            etd.addNote(new Note(ja.getJSONObject(i).getString("label"),ja.getJSONObject(i).getDouble("score")));
+                        }
+                    }
 
 
                     VolleySingleton.getInstance(getApplicationContext()).getImageLoader().get(HTTP_Images + response.getString("photo"),new ImageLoader.ImageListener(){
@@ -122,9 +143,9 @@ public class MainActivity extends AppCompatActivity {
 
                     ListView listView = findViewById(R.id.txt_note);
                     List<Object> noteStrings = new ArrayList<>();
-                    for (Note n : notes) {
+                   /* for (Note n : notes) {
                         noteStrings.add(n.getNote() + n.getCoef());
-                    }
+                    }*/
                     ArrayAdapter<Object> adapter = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_list_item_1, noteStrings);
                     listView.setAdapter(adapter);
